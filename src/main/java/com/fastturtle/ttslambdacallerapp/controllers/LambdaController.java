@@ -19,7 +19,7 @@ public class LambdaController {
     }
 
     @PostMapping("/callTextToAudioLambda")
-    public Response callLambda(@RequestBody Request request) {
+    public Response callLambda(@RequestBody Request request) {  // Added @RequestBody, which resolved error of empty request body
         String lambdaResponse = lambdaService.invokeLambdaForTTSUsingPolly(request);
 
         try {
